@@ -1,10 +1,10 @@
 class RdmCli < Formula
   desc "CLI for managing project roadmaps, phases, and tasks"
   homepage "https://github.com/edpaget/rdm"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/edpaget/rdm/releases/download/v0.2.0/rdm-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "45ccbbc5ccc2aa8e665b4a26a78fffe2d5d90ef73f1ab5f26fa91bbd5ac22bbf"
+      url "https://github.com/edpaget/rdm/releases/download/v0.3.0/rdm-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "880e5ebf384139eb55255e4ba5b66ddceeed68a48e3f720bc6bb6cdc4a1504af"
   end
   license "GPL-3.0-or-later"
 
