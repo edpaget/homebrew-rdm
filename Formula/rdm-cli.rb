@@ -1,15 +1,20 @@
 class RdmCli < Formula
   desc "CLI for managing project roadmaps, phases, and tasks"
   homepage "https://github.com/edpaget/rdm"
-  version "0.6.2"
+  version "0.7.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/edpaget/rdm/releases/download/v0.6.2/rdm-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "9c0cc5e574d78023cd46fc1d67a0a6f61207ffa2880616c43422955e76ca376b"
+    url "https://github.com/edpaget/rdm/releases/download/v0.7.0/rdm-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "0dffd2ce9c9d71ba444133a3498e1ca147c1643d54b26c375f12dae6b8930bd4"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/edpaget/rdm/releases/download/v0.7.0/rdm-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "80801c8f1d689e640193909346d5d97538e4ef27b6f8200539ba76b3344eed4b"
   end
   license "GPL-3.0-or-later"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":     {},
+    "x86_64-unknown-linux-gnu": {},
   }.freeze
 
   def target_triple
@@ -29,6 +34,7 @@ class RdmCli < Formula
 
   def install
     bin.install "rdm" if OS.mac? && Hardware::CPU.arm?
+    bin.install "rdm" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
