@@ -1,25 +1,25 @@
 class RdmCli < Formula
   desc "CLI for managing project roadmaps, phases, and tasks"
   homepage "https://github.com/edpaget/rdm"
-  version "0.14.0"
+  version "0.15.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/edpaget/rdm/releases/download/v0.14.0/rdm-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "2adb73751429ddf160cee99f09c2fe27ab124fa05449ae5b03d74e01f8edd94c"
+      url "https://github.com/edpaget/rdm/releases/download/v0.15.0/rdm-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "592d5cb46cd5daadeb16ce4a883e41be5a0fcfca7089189d2ef698960002c3e8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/edpaget/rdm/releases/download/v0.14.0/rdm-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "49bc010a525caed27595424107bb56eb50e1fcd3e996b266bb579529a1ccc647"
+      url "https://github.com/edpaget/rdm/releases/download/v0.15.0/rdm-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "7959646eba01952756da6717838ef0afed7fdeb61d5417ab80f3083b0a10210b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/edpaget/rdm/releases/download/v0.14.0/rdm-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b30bf0a17f958c247af0667f461080e72c07f297568dc379a31379a5880e5aff"
+      url "https://github.com/edpaget/rdm/releases/download/v0.15.0/rdm-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3b42220a3f006441c272fd0fa7b6c80ac2cf9c5dffdff8732fc6628d846ab54c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/edpaget/rdm/releases/download/v0.14.0/rdm-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ed6ae12a7f74764871cbc668cb372827a8a5d2b504112ee9553148e9bb8bd213"
+      url "https://github.com/edpaget/rdm/releases/download/v0.15.0/rdm-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0abea7f779a431bf4bb6541df4eec6e3c835a7d74957d065c1044f27581b304b"
     end
   end
   license "GPL-3.0-or-later"
