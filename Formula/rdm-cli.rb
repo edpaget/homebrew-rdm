@@ -1,25 +1,25 @@
 class RdmCli < Formula
   desc "CLI for managing project roadmaps, phases, and tasks"
   homepage "https://github.com/edpaget/rdm"
-  version "0.19.0"
+  version "0.20.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/edpaget/rdm/releases/download/v0.19.0/rdm-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "0db04b7de3fd861ab00725fee6d316b908565d76f7ccb184eba3ead64c2833cd"
+      url "https://github.com/edpaget/rdm/releases/download/v0.20.0/rdm-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3a2c9b6e005a2c227b81dd370baa439331b1c64f5b4994240dcdc43282cc0a68"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/edpaget/rdm/releases/download/v0.19.0/rdm-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "2e44cbb5bebd7aa72e98edff29816759902c84d926faffeaff4c6667118958fe"
+      url "https://github.com/edpaget/rdm/releases/download/v0.20.0/rdm-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "3600b920babcedb646b5738d251cc02b003c51000eeeac43da9c0ae7470425b4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/edpaget/rdm/releases/download/v0.19.0/rdm-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "930fff8fa779d97bdf329f51ec61ae703c64f2e2e6fd633996de9a1e8f9a2719"
+      url "https://github.com/edpaget/rdm/releases/download/v0.20.0/rdm-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3bb42e1c97194a40b81283fe045c6b481b68690c036cf60bab88c3fc6675bd67"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/edpaget/rdm/releases/download/v0.19.0/rdm-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "55884c6563033ce2bbb4f974ec4e342b65f5441f2cd2e493a2de88e58b484620"
+      url "https://github.com/edpaget/rdm/releases/download/v0.20.0/rdm-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "785e4dfe7b229c2952370ace1e4bb601d9f10511aecdb0b37eb5d8230f657cad"
     end
   end
   license "GPL-3.0-or-later"
@@ -47,10 +47,18 @@ class RdmCli < Formula
   end
 
   def install
-    bin.install "rdm" if OS.mac? && Hardware::CPU.arm?
-    bin.install "rdm" if OS.mac? && Hardware::CPU.intel?
-    bin.install "rdm" if OS.linux? && Hardware::CPU.arm?
-    bin.install "rdm" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "rdm"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "rdm"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "rdm"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "rdm"
+    end
 
     install_binary_aliases!
 
